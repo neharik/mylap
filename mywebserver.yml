@@ -2,11 +2,11 @@
 - hosts: all
   become: yes
   tasks: 
-  - name: i want to install git
+  - name: i want to install webserver on RedHatnode
     apt:
-      name: git
+      name: httpd
       state: present
-    when: ansible_os_family=="Debian"
+    when: ansible_os_family=="RedHat"
 
   - name: i want to install tree
     apt:
